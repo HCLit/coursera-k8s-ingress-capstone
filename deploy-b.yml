@@ -18,3 +18,8 @@ spec:
           image: gcr.io/google-samples/hello-app:1.0
           ports:
             - containerPort: 8080
+          env:
+            - name: GUNICORN_CMD_ARGS
+              value: "--Capture-output --error-logfile -
+                     --access-logfile - --access-logformat '%(h)s %(t)s
+                    %(r)s %(s)s Host: %({Host}i)s}'"
